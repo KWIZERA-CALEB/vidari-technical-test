@@ -19,6 +19,12 @@ const Landing = () => {
         <div>
             {isPreloaderShown && <Preloader />}
             <Navigation />
+            <div className='w-full flex justify-center mt-[50px]'>
+                <div className='w-[600px] flex flex-col items-center'>
+                    <img src="/images/phone.png" className='w-[400px]' alt="illustration" />
+                    <p className='text-center text-[32px]'>Afforable Cross Border <p className='text-green-500 font-bold'>Payments</p> with Vidari Pay</p>
+                </div>
+            </div>
             
         </div>
     )
