@@ -21,7 +21,7 @@ const BuyGiftCardPage = () => {
         mode: 'onChange',
         defaultValues: {
             giftCardAmount: '',
-            numberOfGiftCards: 1,
+            numberOfGiftCards: '',
             giftCardType: '',
         },
     })

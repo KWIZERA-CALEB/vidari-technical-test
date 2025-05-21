@@ -35,7 +35,7 @@ const GiftCardPurchaseForm = () => {
                 name="giftCardType"
                 control={control}
                 rules={{ 
-                    required: 'Gift card amount is required', 
+                    required: 'Gift card type is required', 
                     pattern: {
                         value: /^[0-9]$/,
                         message: 'Please enter a valid amount',
@@ -49,10 +49,10 @@ const GiftCardPurchaseForm = () => {
                 <p className='text-[12px] text-[#FF204E]'>{errors.giftCardType.message}</p>
             )}
             <Controller 
-                name="giftCardAmount"
+                name="numberOfGiftCards"
                 control={control}
                 rules={{ 
-                    required: 'Gift card amount is required', 
+                    required: 'Number of gift cards is required', 
                     pattern: {
                         value: /^[0-9]$/,
                         message: 'Please enter a valid amount',
