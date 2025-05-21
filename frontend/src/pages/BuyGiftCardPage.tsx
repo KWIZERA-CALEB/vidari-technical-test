@@ -22,7 +22,7 @@ const BuyGiftCardPage = () => {
         defaultValues: {
             giftCardAmount: '',
             numberOfGiftCards: '',
-            giftCardType: '',
+            giftCardType: 'Netflix',
         },
     })
 

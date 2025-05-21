@@ -19,10 +19,6 @@ const GiftCardPurchaseForm = () => {
                 control={control}
                 rules={{ 
                     required: 'Gift card amount is required', 
-                    pattern: {
-                        value: /^[0-9]$/,
-                        message: 'Please enter a valid amount',
-                    },
                     }}
                 render={({ field }) => (
                     <Input value={field.value} onChange={field.onChange} inputType="number" inputPlaceholder="Gift card amount" />
@@ -34,13 +30,6 @@ const GiftCardPurchaseForm = () => {
             <Controller 
                 name="giftCardType"
                 control={control}
-                rules={{ 
-                    required: 'Gift card type is required', 
-                    pattern: {
-                        value: /^[0-9]$/,
-                        message: 'Please enter a valid amount',
-                    },
-                    }}
                 render={({ field }) => (
                     <Select handleSelectChange={handleGiftCardTypeChange} value={field.value} selectOptionTerm="Gift card type" options={['Netflix', 'Amazon', 'Lulu']} />
                 )}
@@ -53,10 +42,10 @@ const GiftCardPurchaseForm = () => {
                 control={control}
                 rules={{ 
                     required: 'Number of gift cards is required', 
-                    pattern: {
-                        value: /^[0-9]$/,
-                        message: 'Please enter a valid amount',
-                    },
+                    // pattern: {
+                    //     value: /^[0-9]$/,
+                    //     message: 'Please enter a valid amount',
+                    // },
                     }}
                 render={({ field }) => (
                     <Input inputType="number" value={field.value} onChange={field.onChange} inputPlaceholder="Number of Gift cards" />
