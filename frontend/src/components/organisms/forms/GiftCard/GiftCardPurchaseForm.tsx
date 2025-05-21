@@ -7,6 +7,7 @@ import { type GiftCardTypes } from '../../../../utils/types'
 const GiftCardPurchaseForm = () => {
     const [selectedGiftCardType, setSelectedGiftCardType] = useState('netflix')
     const { control, formState: {errors} } = useFormContext<GiftCardTypes>()
+    const [choosenGiftCard, setChoosenGiftCard] = useState('netflix')
 
     const handleGiftCardTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedGiftCardType(e.target.value)
@@ -34,6 +35,12 @@ const GiftCardPurchaseForm = () => {
                     <Select handleSelectChange={handleGiftCardTypeChange} value={field.value} selectOptionTerm="Gift card type" options={['Netflix', 'Amazon', 'Lulu']} />
                 )}
             />
+            <div className="grid grid-cols-1 gap-[2px] md:grid-cols-2 w-full">
+                <div onClick={() => setChoosenGiftCard('netflix')} className={` ${choosenGiftCard === "netflix" ? "border-[#2FB92F] bg-[#2FB92F]/[40%]" : "border-gray-400"} flex flex-row space-x-[10px] items-center border-[1px] border-solid pt-[12px] cursor-pointer pb-[12px] pr-[10px] pl-[10px] rounded-[12px]`}><img src='/images/netflix.png' className='w-[50px]' alt='' /><p>Netflix</p></div>
+                <div onClick={() => setChoosenGiftCard('amazon')} className={` ${choosenGiftCard === "amazon" ? "border-[#2FB92F] bg-[#2FB92F]/[40%]" : "border-gray-400"} flex flex-row space-x-[10px] items-center border-[1px] border-solid pt-[12px] cursor-pointer pb-[12px] pr-[10px] pl-[10px] rounded-[12px]`}><img src='/images/amazon.png' className='w-[50px]' alt='' /><p>Amazon</p></div>
+                <div onClick={() => setChoosenGiftCard('hulu')} className={` ${choosenGiftCard === "hulu" ? "border-[#2FB92F] bg-[#2FB92F]/[40%]" : "border-gray-400"} flex flex-row space-x-[10px] items-center border-[1px] border-solid pt-[12px] cursor-pointer pb-[12px] pr-[10px] pl-[10px] rounded-[12px]`}><img src='/images/hulu.png' className='w-[30px]' alt='' /><p>Hulu</p></div>
+                <div onClick={() => setChoosenGiftCard('ebay')} className={` ${choosenGiftCard === "ebay" ? "border-[#2FB92F] bg-[#2FB92F]/[40%]" : "border-gray-400"} flex flex-row space-x-[10px] items-center border-[1px] border-solid pt-[12px] cursor-pointer pb-[12px] pr-[10px] pl-[10px] rounded-[12px]`}><img src='/images/ebay.png' className='w-[30px]' alt='' /><p>Ebay</p></div>
+            </div>
             {errors.giftCardType && (
                 <p className='text-[12px] text-[#FF204E]'>{errors.giftCardType.message}</p>
             )}

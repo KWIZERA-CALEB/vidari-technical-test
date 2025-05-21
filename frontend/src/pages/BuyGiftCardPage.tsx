@@ -11,6 +11,7 @@ import useWindowSize from 'react-use/lib/useWindowSize'
 import { FormProvider, useForm, type SubmitHandler } from 'react-hook-form'
 import { type GiftCardTypes } from '../utils/types'
 
+
 const BuyGiftCardPage = () => {
     const [confetti, setConfetti] = useState(false)
     const { width, height } = useWindowSize()
